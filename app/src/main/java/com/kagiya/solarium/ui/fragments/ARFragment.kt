@@ -1,34 +1,29 @@
-package com.kagiya.solarium
+package com.kagiya.solarium.ui.fragments
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.google.ar.core.Config
-import com.kagiya.solarium.databinding.ActivityMainBinding
-import com.kagiya.solarium.ui.theme.SolariumTheme
+import com.kagiya.solarium.databinding.FragmentArBinding
 import io.github.sceneview.ar.node.ArModelNode
 import io.github.sceneview.ar.node.PlacementMode
 import io.github.sceneview.math.Position
 
-class MainActivity : ComponentActivity() {
+class ARFragment : Fragment() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: FragmentArBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        setupSceneView()
-        setupPlanetsNodes()
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentArBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
     private fun setupSceneView(){
@@ -63,4 +58,5 @@ class MainActivity : ComponentActivity() {
 
         binding.arSceneView.addChild(solarSystemNode)
     }
+
 }
