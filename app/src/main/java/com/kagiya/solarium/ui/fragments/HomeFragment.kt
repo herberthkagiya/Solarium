@@ -5,19 +5,35 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import com.kagiya.solarium.R
+import com.kagiya.solarium.adapters.PlanetsAdapter
+import com.kagiya.solarium.data.PlanetsRepository
+import com.kagiya.solarium.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
 
-
+    private lateinit var binding: FragmentHomeBinding
+    private val repository = PlanetsRepository()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding.planetsRecyclerView.layoutManager = GridLayoutManager(context, 2)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val planets = repository.getPlanets()
+
+        binding.planetsRecyclerView.adapter = PlanetsAdapter(planets)
     }
 
 }

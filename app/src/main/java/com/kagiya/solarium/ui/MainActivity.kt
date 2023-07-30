@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     private fun setOnboardingIfNecessary(){
         if(isFirstTimeLaunchingTheApp()){
             showOnboardingScreen()

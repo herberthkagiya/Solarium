@@ -10,4 +10,31 @@
     <string name="onboarding_subtitle">Observe a beleza através do\ncosmos com nosso app</string>
     <string name="onboarding_button">Vamos Começar</string>
 
+    <!--Home-->
+    <string name="home_title">Observe o universo na palma da sua mão</string>
+
+    <!--Planets-->
+    <string name="mercury_name">Mercúrio</string>
+    <string name="mercury_description">Mercúrio é o primeiro planeta em nosso sistema solar e é um dos corpos celestes mais fascinantes do universo. Ele tem um diâmetro de 4.880 km.</string>
+
+    <string name="venus_name">Vênus</string>
+    <string name="venus_description">Vênus é o segundo planeta mais próximo do Sol e é frequentemente chamado de "gêmeo da Terra". Ele tem um diâmetro de 12.104 km.</string>
+
+    <string name="earth_name">Terra</string>
+    <string name="earth_description">A terra é o terceiro planeta do sistema solar e é o único planeta conhecico capaz de conter vida. Ela tem um diâmetro de 12,742 km.</string>
+
+    <string name="mars_name">Marte</string>
+    <string name="mars_description">Marte, muitas vezes chamado de "Planeta Vermelho", é o quarto planeta a partir do Sol em nosso sistema solar. Ele tem um diâmetro de 6.779 km.</string>
+
+    <string name="jupter_name">Júpter</string>
+    <string name="jupter_description">Júpiter é quarto planeta do sistema solar e é maior entre eles. Ele tem um diâmetro de 142.984 km.</string>
+
+    <string name="saturn_name">Saturno</string>
+    <string name="saturn_description">Saturno é o sexto planeta a partir do Sol em nosso sistema solar e é conhecido por seus impressionantes anéis. Seus anéis possuem 280.000 km de diâmetro.</string>
+
+    <string name="uranus_name">Urano</string>
+    <string name="uranus_description">Urano é o sétimo planeta a partir do Sol em nosso sistema solar e é sua inclinação extrema. Ele possui um diãmetro de 51.118 km.</string>
+
+    <string name="neptune_name">Netuno</string>
+    <string name="neptune_description">Netuno é o oitavo e último planeta a partir do Sol em nosso sistema solar. É um planeta gigante de gelo e gás. Ele possui um diâmetro de 49.244 km.</string>
 </resources>
