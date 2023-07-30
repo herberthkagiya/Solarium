@@ -37,4 +37,7 @@
 
     <string name="neptune_name">Netuno</string>
     <string name="neptune_description">Netuno é o oitavo e último planeta a partir do Sol em nosso sistema solar. É um planeta gigante de gelo e gás. Ele possui um diâmetro de 49.244 km.</string>
+
+    <string name="solar_system_name">Sistema Solar</string>
+    <string name="solar_system_description">O sistema solar é um vasto bairro cósmico que é o lar da Terra. É centrado em uma única estrela, o Sol, que detém aproximadamente 99,86% de sua massa total.</string>
 </resources>

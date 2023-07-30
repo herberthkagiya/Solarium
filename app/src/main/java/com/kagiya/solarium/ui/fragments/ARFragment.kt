@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.navArgs
 import com.google.ar.core.Config
+import com.kagiya.solarium.data.Planet
 import com.kagiya.solarium.data.PlanetsRepository
 import com.kagiya.solarium.databinding.FragmentArBinding
 import io.github.sceneview.ar.node.ArModelNode
@@ -52,7 +53,7 @@ class ARFragment : Fragment() {
 
     private fun setupPlanetNode() {
 
-        val modelLocation = getPlanetModelLocation()
+        val planet = getPlanet()
 
         solarSystemNode = ArModelNode(
             binding.arSceneView.engine,
@@ -62,9 +63,9 @@ class ARFragment : Fragment() {
             isSmoothPoseEnable = true
             followHitPosition = true
             loadModelGlbAsync(
-                glbFileLocation = modelLocation,
+                glbFileLocation = planet!!.modelLocation,
                 autoAnimate = true,
-                scaleToUnits = 2.0f,
+                scaleToUnits = 2.0f * planet.scaleSize,
                 centerOrigin = Position(0.0f, 0.0f, 2.0f)
             )
         }
@@ -72,7 +73,7 @@ class ARFragment : Fragment() {
         binding.arSceneView.addChild(solarSystemNode)
     }
 
-    private fun getPlanetModelLocation() : String{
+    private fun getPlanet() : Planet?{
         val allPlanets = repository.getPlanets()
         val planetName = args.planetName
 
@@ -80,13 +81,6 @@ class ARFragment : Fragment() {
             it.name == planetName
         }
 
-       return planet!!.modelLocation
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-        solarSystemNode.destroy()
-        binding.arSceneView.destroy()
+       return planet
     }
 }
