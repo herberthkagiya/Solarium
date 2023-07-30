@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.kagiya.solarium.R
 import com.kagiya.solarium.adapters.PlanetsAdapter
@@ -33,7 +34,11 @@ class HomeFragment : Fragment() {
 
         val planets = repository.getPlanets()
 
-        binding.planetsRecyclerView.adapter = PlanetsAdapter(planets)
+        binding.planetsRecyclerView.adapter = PlanetsAdapter(planets){ planetName ->
+            findNavController().navigate(
+                HomeFragmentDirections.showPlanetAR(planetName)
+            )
+        }
     }
 
 }

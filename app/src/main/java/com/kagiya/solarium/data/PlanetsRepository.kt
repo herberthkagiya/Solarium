@@ -67,7 +67,7 @@ class PlanetsRepository {
                 R.string.neptune_description,
                 "#20a8ee",
                 R.drawable.neptune,
-                "models/Uranus.glb"
+                "models/Neptune.glb"
             )
         )
     }

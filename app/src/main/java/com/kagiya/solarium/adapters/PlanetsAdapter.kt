@@ -1,8 +1,10 @@
 package com.kagiya.solarium.adapters
 
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContentProviderCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.kagiya.solarium.data.Planet
 import com.kagiya.solarium.data.PlanetsRepository
@@ -10,7 +12,8 @@ import com.kagiya.solarium.databinding.ListItemPlanetBinding
 
 
 class PlanetsAdapter(
-    private val planets: List<Planet>
+    private val planets: List<Planet>,
+    private val onClick: (planetName: Int) -> Unit
 ) : RecyclerView.Adapter<PlanetViewHolder>() {
 
 
@@ -21,7 +24,7 @@ class PlanetsAdapter(
     }
 
     override fun onBindViewHolder(holder: PlanetViewHolder, position: Int) {
-        holder.bind(planets[position])
+        holder.bind(planets[position], onClick)
     }
 
     override fun getItemCount(): Int {
@@ -31,10 +34,16 @@ class PlanetsAdapter(
 
 
 class PlanetViewHolder (
-    private val binding : ListItemPlanetBinding
+    private val binding : ListItemPlanetBinding,
 ): RecyclerView.ViewHolder(binding.root){
 
-    fun bind(planet: Planet){
+    fun bind(planet: Planet, onClick: (planetName: Int) -> Unit){
+
+        binding.card.setOnClickListener{
+            onClick(planet.name)
+
+            Log.d("Planet",  planet.name.toString())
+        }
 
         binding.card.background.setTint(Color.parseColor(planet.cardBackgroundColor))
         binding.planetImage.setImageResource(planet.image)
