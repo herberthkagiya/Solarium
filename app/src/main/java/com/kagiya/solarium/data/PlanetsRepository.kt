@@ -89,6 +89,16 @@ class PlanetsRepository {
             )
         )
     }
+
+    fun getPlanetByName(planetName: Int) : Planet?{
+        val allPlanets = getPlanets()
+
+        val planet = allPlanets.find {
+            it.name == planetName
+        }
+
+        return planet
+    }
 }
 
 data class Planet(
