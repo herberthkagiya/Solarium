@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.findNavController
 import com.kagiya.solarium.R
 import com.kagiya.solarium.databinding.ActivityMainBinding
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
+        installSplashScreen()
+
         setContentView(binding.root)
 
         setOnboardingIfNecessary()

@@ -78,7 +78,7 @@ class ARFragment : Fragment() {
         ).apply {
 
             parent = binding.arSceneView
-            isSmoothPoseEnable = false
+            isSmoothPoseEnable = true
 
 
             loadModelGlbAsync(
